@@ -1,5 +1,7 @@
 let buttonDiv = document.getElementById("buttonDiv");
 let nameDiv = document.getElementById("nameDiv");
+let infoTable = document.getElementById("infoTable");
+
 let selectedClassName = "current";
 const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
 
@@ -53,6 +55,16 @@ function displayName() {
     });
 }
 
+function tableAppendData(data) {
+    let newRow = infoTable.insertRow();
+    data.forEach(elem => {
+        newRow.insertCell().append(elem);
+    });
+}
+
 // Initialize the page by constructing the color options
 constructOptions(presetButtonColors);
 displayName();
+tableAppendData(["yahoo.com", "bob", "bob@vassar.edu"]);
+tableAppendData(["gmail.com", "jane", "jane@vassar.edu"]);
+tableAppendData(["vassar.edu", "matthew", "matthew@vassar.edu"]);
