@@ -4,6 +4,13 @@ let titleInput = document.getElementById("titleInput");
 let nameInput = document.getElementById("nameInput");
 let updateName = document.getElementById("updateName");
 
+// user info
+let websiteInput = document.getElementById("websiteInput");
+let emailInput = document.getElementById("emailInput");
+let dobInput = document.getElementById("dobInput");
+let addressInput = document.getElementById("addressInput");
+let updateInfo = document.getElementById("updateInfo");
+
 chrome.storage.sync.get("color", ({ color }) => {
     changeColor.style.backgroundColor = color;
 });
@@ -34,6 +41,19 @@ updateName.addEventListener("click", async () => {
     let name = nameInput.value;
 
     chrome.storage.sync.set({ name });
+});
+
+updateInfo.addEventListener("click", async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    let website = websiteInput.value;
+    let email = emailInput.checked;
+    let dob = dobInput.checked;
+    let address = addressInput.checked;
+
+    chrome.storage.sync.set({ website });
+    chrome.storage.sync.set({ email });
+    chrome.storage.sync.set({ dob });
+    chrome.storage.sync.set({ address });
 });
 
 // The body of this function will be executed as a content script inside the
