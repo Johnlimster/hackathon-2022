@@ -1,6 +1,9 @@
 // Initialize butotn with users's prefered color
 let changeColor = document.getElementById("changeColor");
 let titleInput = document.getElementById("titleInput");
+let nameInput = document.getElementById("nameInput");
+let updateName = document.getElementById("updateName");
+
 
 chrome.storage.sync.get("color", ({ color }) => {
     changeColor.style.backgroundColor = color;
@@ -27,6 +30,13 @@ titleInput.addEventListener("input", async () => {
     });
 });
 
+updateName.addEventListener("click", async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    let name = nameInput.value;
+
+    chrome.storage.sync.set({name});
+});
+
 // The body of this function will be execuetd as a content script inside the
 // current page
 function setPageBackgroundColor() {
@@ -38,3 +48,7 @@ function setPageBackgroundColor() {
 function setPageTitle(newTitle) {
     document.title = newTitle
 }
+
+
+
+
