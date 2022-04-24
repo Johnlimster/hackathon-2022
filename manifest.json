@@ -11,12 +11,12 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content/autofill.js"],
-      "css": ["icons/keepassxc.svg", "css/notifications.css"]
+      "css": ["icons/data-block.svg", "css/notifications.css"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["icons/keepassxc.svg", "css/notifications.css"],
+      "resources": ["icons/data-block.svg", "css/notifications.css"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -30,17 +30,17 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "/images/get_started16.png",
-      "32": "/images/get_started32.png",
-      "48": "/images/get_started48.png",
-      "128": "/images/get_started128.png"
+      "16": "icons/get_started16.png",
+      "32": "icons/get_started32.png",
+      "48": "icons/get_started48.png",
+      "128": "icons/get_started128.png"
     }
   },
   "icons": {
-    "16": "/images/get_started16.png",
-    "32": "/images/get_started32.png",
-    "48": "/images/get_started48.png",
-    "128": "/images/get_started128.png"
+    "16": "icons/get_started16.png",
+    "32": "icons/get_started32.png",
+    "48": "icons/get_started48.png",
+    "128": "icons/get_started128.png"
   },
   "options_page": "options.html"
 }
