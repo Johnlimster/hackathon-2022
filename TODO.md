@@ -2,7 +2,7 @@
 
 ## Minor
 1. Add other user info (e.g., name, phone number)
-2. Add custom SVG icon
+2. Rename KeePassXC CSS
 
 ## Major
 1. Landing page
