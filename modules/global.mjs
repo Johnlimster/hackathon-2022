@@ -8,3 +8,21 @@ export function getStorageByKey(key) {
         });
     });
 }
+
+export async function storeInfo(website, email, dob, address) {
+    let oldWebsites = await getStorageByKey("websites");
+    let oldEmails = await getStorageByKey("emails");
+    let oldDobs = await getStorageByKey("dobs");
+    let oldAddresses = await getStorageByKey("addresses");
+    oldWebsites.push(website);
+    oldEmails.push(email);
+    oldDobs.push(dob);
+    oldAddresses.push(address);
+
+    chrome.storage.sync.set({
+        websites: oldWebsites,
+        emails: oldEmails,
+        dobs: oldDobs,
+        addresses: oldAddresses,
+    });
+}
