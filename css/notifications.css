@@ -1,4 +1,4 @@
-.kpxc-notification {
+.notification {
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
@@ -19,11 +19,11 @@
   z-index: 2147483646;
 }
 
-.kpxc-notification span {
+.notification span {
   padding: 2px;
 }
 
-.kpxc-notification .kpxc-banner-icon {
+.notification .banner-icon {
   width: 24px;
   height: 24px;
   padding: 10px;
@@ -33,7 +33,7 @@
   background-size: contain;
 }
 
-.kpxc-notification .kpxc-banner-icon-moz {
+.notification .banner-icon-moz {
   width: 24px;
   height: 24px;
   padding: 10px;
@@ -43,29 +43,29 @@
   background-size: contain;
 }
 
-.kpxc-notification .kpxc-label {
+.notification .label {
   font-weight: bold;
 }
 
-.kpxc-notification-success {
+.notification-success {
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb;
 }
 
-.kpxc-notification-warning {
+.notification-warning {
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
 }
 
-.kpxc-notification-info {
+.notification-info {
   color: #004085;
   background-color: #cce5ff;
   border-color: #b8daff;
 }
 
-.kpxc-notification-error {
+.notification-error {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;

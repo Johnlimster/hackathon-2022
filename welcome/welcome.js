@@ -1,4 +1,4 @@
-import { displayWarning } from "/modules/global.mjs";
+import { displaySuccess } from "/modules/global.mjs";
 
 let emailInput = document.getElementById("emailInput");
 let phoneInput = document.getElementById("phoneInput");
@@ -16,5 +16,5 @@ saveButton.addEventListener("click", async () => {
     chrome.storage.sync.set({ sharePhone });
     chrome.storage.sync.set({ shareDob });
     chrome.storage.sync.set({ shareAddress });
-    displayWarning("Successfully saved preferences!");
+    displaySuccess("Successfully saved preferences!");
 });

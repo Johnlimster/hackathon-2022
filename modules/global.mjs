@@ -33,11 +33,11 @@ export async function storeInfo(website, phone, email, dob, address) {
     });
 }
 
-export function displayWarning(msg) {
+export function displaySuccess(msg) {
     let div = document.createElement("div");
-    div.classList.add("kpxc-notification", "kpxc-notification-warning");
+    div.classList.add("notification", "notification-success");
     let span1 = document.createElement("span");
-    span1.classList.add("kpxc-banner-icon");
+    span1.classList.add("banner-icon");
     let span2 = document.createElement("span");
     span2.innerHTML = msg;
 
