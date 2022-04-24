@@ -1,47 +1,8 @@
-// Initialize button with user's preferred color
-let changeColor = document.getElementById("changeColor");
-let titleInput = document.getElementById("titleInput");
-let nameInput = document.getElementById("nameInput");
-let updateName = document.getElementById("updateName");
-
-// user info
 let websiteInput = document.getElementById("websiteInput");
 let emailInput = document.getElementById("emailInput");
 let dobInput = document.getElementById("dobInput");
 let addressInput = document.getElementById("addressInput");
 let updateInfo = document.getElementById("updateInfo");
-
-chrome.storage.sync.get("color", ({ color }) => {
-    changeColor.style.backgroundColor = color;
-});
-
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-    chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        function: setPageBackgroundColor,
-    });
-});
-
-titleInput.addEventListener("input", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    let newTitle = titleInput.value;
-
-    chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        function: setPageTitle,
-        args: [newTitle],
-    });
-});
-
-updateName.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    let name = nameInput.value;
-
-    chrome.storage.sync.set({ name });
-});
 
 updateInfo.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -50,20 +11,30 @@ updateInfo.addEventListener("click", async () => {
     let dob = dobInput.checked;
     let address = addressInput.checked;
 
-    chrome.storage.sync.set({ website });
-    chrome.storage.sync.set({ email });
-    chrome.storage.sync.set({ dob });
-    chrome.storage.sync.set({ address });
+    let oldWebsites = await getStorageByKey("websites");
+    let oldEmails = await getStorageByKey("emails");
+    let oldDobs = await getStorageByKey("dobs");
+    let oldAddresses = await getStorageByKey("addresses");
+    oldWebsites.push(website);
+    oldEmails.push(email);
+    oldDobs.push(dob);
+    oldAddresses.push(address);
+
+    chrome.storage.sync.set({
+        websites: oldWebsites,
+        emails: oldEmails,
+        dobs: oldDobs,
+        addresses: oldAddresses,
+    });
 });
 
-// The body of this function will be executed as a content script inside the
-// current page
-function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({ color }) => {
-        document.body.style.backgroundColor = color;
+function getStorageByKey(key) {
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.get({ [key]: [] }, ({ [key]: result }) => {
+            if (chrome.runtime.lastError) {
+                return reject(chrome.runtime.lastError);
+            }
+            resolve(result);
+        });
     });
-}
-
-function setPageTitle(newTitle) {
-    document.title = newTitle;
 }
