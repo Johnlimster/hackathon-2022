@@ -1,11 +1,9 @@
 # TODO
 
 ## Minor
-1. Prevent duplicate entries
-2. If no input has `autocomplete` but there is still a form present, fall back
+1. If no input has `autocomplete` but there is still a form present, fall back
 to pop-up input method
-3. Make detection happen upon form submission instead of page load
-4. Add other user info (e.g., name, phone number)
+2. Add other user info (e.g., name, phone number)
 
 ## Major
 1. Landing page

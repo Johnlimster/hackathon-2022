@@ -22,12 +22,17 @@ inputEls.forEach((inputEl) => {
     else if (fieldType == "address") hasAddressField = true;
 });
 
-chrome.runtime.sendMessage(
-    { hasEmailField, hasDobField, hasAddressField },
-    function (response) {
-        console.log(response.farewell);
-    }
-);
+const formEls = document.querySelectorAll("form");
+formEls.forEach((formEl) => {
+    formEl.addEventListener("submit", () => {
+        chrome.runtime.sendMessage(
+            { hasEmailField, hasDobField, hasAddressField },
+            function (response) {
+                console.log(response.farewell);
+            }
+        );
+    });
+});
 
 function fieldTypeFromAutofillDetails(autofillDetails) {
     let detailsList = autofillDetails.split(" ");

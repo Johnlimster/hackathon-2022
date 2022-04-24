@@ -14,6 +14,9 @@ export async function storeInfo(website, email, dob, address) {
     let oldEmails = await getStorageByKey("emails");
     let oldDobs = await getStorageByKey("dobs");
     let oldAddresses = await getStorageByKey("addresses");
+
+    if (oldWebsites.includes(website)) return;
+
     oldWebsites.push(website);
     oldEmails.push(email);
     oldDobs.push(dob);
