@@ -32,3 +32,20 @@ export async function storeInfo(website, phone, email, dob, address) {
         addresses: oldAddresses,
     });
 }
+
+export function displayWarning(msg) {
+    let div = document.createElement("div");
+    div.classList.add("kpxc-notification", "kpxc-notification-warning");
+    let span1 = document.createElement("span");
+    span1.classList.add("kpxc-banner-icon");
+    let span2 = document.createElement("span");
+    span2.innerHTML = msg;
+
+    div.appendChild(span1);
+    div.appendChild(span2);
+    document.body.appendChild(div);
+
+    setTimeout(() => {
+        document.body.removeChild(div);
+    }, 5000);
+}

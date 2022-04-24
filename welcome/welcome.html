@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="welcomeStyles.css">
-    <h1>Data Block</h1>
+    <title>Welcome — DataBlock</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="welcome.css">
+    <link rel="stylesheet" type="text/css" href="../css/notifications.css">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
   </head>
+  <body>
+    <div class="container">
+      <h1><img style="vertical-align:middle; margin: auto 10px;" src="../icons/data-block.svg" width=64px height=64px>DataBlock</h1>
 
-  <body class = gradient>
+      <div class="btn-panel">
+        <h2>What info are you comfortable sharing with sites?</h2>
+        <label class="checkbox-label"><input class="green-input" type="checkbox" id="emailInput"/>Email</label>
+        <label class="checkbox-label"><input class="green-input" type="checkbox" id="phoneInput"/>Phone</label>
+        <label class="checkbox-label"><input class="green-input" type="checkbox" id="dobInput"/>Date of birth</label>
+        <label class="checkbox-label"><input class="green-input" type="checkbox" id="addressInput"/>Address</label>
+        <br>
+        <br>
+        <button class="save" id="saveButton">Save</button>
+      </div>
 
-    <legend>Select your Threat Model</legend>
-    <p>I wish share... </p>
+      <div class="notice">
+        <span class="subtle-hint"><span class="topic-label">Track Your Info</span><br>This extension automatically records certain types of input you give to websites. If it cannot determine them, you can always manually track it through the pop-up window (click the extension icon).</span>
+      </div>
 
-    <div>
-    <input type="checkbox" id="emailInput">
-    <label for="emailInput">email</label>
+      <div class="notice">
+        <span class="subtle-hint"><span class="topic-label color-purple">View Trends in Your Data</span><br>Open the settings page to view both a list and a chart of your tracked info. Use this to better understand the type of info you share with sites!</span>
+      </div>
+
+      <h2>Open source!</h2>
+
+      <div class="btn-panel">
+        <a class="btn btn-gitlab" href="https://github.com/jasonhan-vassar/hackathon-2022" target="_blank"><span>GitHub</span></a>
+
+        <a class="btn btn-youtube" href="https://youtube.com" target="_blank"><span>YouTube</span></a>
+      </div>
     </div>
-
-    <div>
-      <input type="checkbox" id="dobInput">
-      <label for="dobInput">dob</label>
-    </div>
-
-    <div>
-      <input type="checkbox" id="addressInput">
-      <label for="addressInput">address</label>
-    </div>
-
-    <button id="updateInfo">update info</button>
-
+    <script type="module" src="welcome.js"></script>
   </body>
 </html>
-
