@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "DataBlock",
+  "description": "Reminds you to be cautious about the info you share.",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
