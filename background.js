@@ -1,3 +1,5 @@
+import { getStorageByKey } from "/modules/global.mjs";
+
 let color = "#3aa757";
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -32,16 +34,5 @@ async function storeInfo(request, sender) {
         emails: oldEmails,
         dobs: oldDobs,
         addresses: oldAddresses,
-    });
-}
-
-function getStorageByKey(key) {
-    return new Promise((resolve, reject) => {
-        chrome.storage.sync.get({ [key]: [] }, ({ [key]: result }) => {
-            if (chrome.runtime.lastError) {
-                return reject(chrome.runtime.lastError);
-            }
-            resolve(result);
-        });
     });
 }
