@@ -4,18 +4,16 @@
     <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <input type="text" id="websiteInput" placeholder="website">
-    <br>
-    <input type="checkbox" id="emailInput">
-    <label for="emailInput">email</label>
-    <br>
-    <input type="checkbox" id="dobInput">
-    <label for="dobInput">dob</label>
-    <br>
-    <input type="checkbox" id="addressInput">
-    <label for="addressInput">address</label>
-    <br>
-    <button id="updateInfo" class="button2">update info</button>
+    <div class="btn-panel">
+      <h2>DataBlock</h2>
+      <label class="checkbox-label"><input class="green-input" type="checkbox" id="emailInput"/>Email</label>
+      <label class="checkbox-label"><input class="green-input" type="checkbox"id="phoneInput"/>Phone</label>
+      <label class="checkbox-label"><input class="green-input" type="checkbox"id="dobInput"/>DoB</label>
+      <label class="checkbox-label"><input class="green-input" type="checkbox"id="addressInput"/>Address</label>
+      <br>
+      <br>
+      <button id="updateInfo" class="save">Save</button>
+    </div>
     <script type="module" src="popup.js"></script>
   </body>
 </html>
