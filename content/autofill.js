@@ -49,7 +49,6 @@ inputEls.forEach((inputEl) => {
     let autofillDetails;
     if (inputEl.autocomplete == "on") autofillDetails = inputEl.name;
     else autofillDetails = inputEl.autocomplete;
-    inputEl.placeholder = autofillDetails; // TODO: remove this
 
     let fieldType = fieldTypeFromAutofillDetails(autofillDetails);
     if (fieldType == "email") hasEmailField = true;
@@ -70,11 +69,11 @@ formEls.forEach((formEl) => {
     });
 });
 
-if (
-    !hasEmailField &&
-    !hasPhoneField &&
-    !hasDobField &&
-    !hasAddressField &&
-    formEls !== null
-)
-    displayWarning("Please enter fields manually using pop-up.");
+// if (
+//     !hasEmailField &&
+//     !hasPhoneField &&
+//     !hasDobField &&
+//     !hasAddressField &&
+//     formEls !== null
+// )
+//     displayWarning("Please enter fields manually using pop-up.");
