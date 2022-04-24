@@ -10,7 +10,14 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content/autofill.js"]
+      "js": ["content/autofill.js"],
+      "css": ["icons/keepassxc.svg", "css/notifications.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/keepassxc.svg", "css/notifications.css"],
+      "matches": ["<all_urls>"]
     }
   ],
   "permissions": [
