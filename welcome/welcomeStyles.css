@@ -1,0 +1,35 @@
+h1 {
+  color: white;
+  font-size: 300%;
+  font-weight: bold;
+
+}
+
+p {
+  font-size: 200%;
+  color: white;
+
+}
+
+label{
+  color: white;
+  font-size: 120%
+}
+
+button {
+  background-color: #8860d0;
+  color: white;
+  top:50%;
+  border:none;
+  border-radius:10px;
+}
+
+
+.gradient {
+  height: 1000px;
+  background-color: #c1c8e4;
+  background-image:
+    radial-gradient(
+      #84ceeb, #5680e9
+    );
+}
