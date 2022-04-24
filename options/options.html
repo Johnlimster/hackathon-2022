@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="options.css">
+    <title>Settings — DataBlock</title>
+
+    <link rel="stylesheet" type="text/css" href="options.css">
   </head>
-  <body>
-    <table id="infoTable">
-      <tr>
-        <td>website</td>
-        <td>email</td>
-        <td>phone</td>
-        <td>date of birth</td>
-        <td>address</td>
-      </tr>
-    </table>
-  </body>
+  <div class="container">
+    <h1><img style="vertical-align:middle; margin: auto 10px;" src="../icons/data-block.svg" width=64px height=64px>DataBlock</h1>
+
+    <div class="notice" style="text-align: center;">
+      <span class="subtle-hint" style="text-align: left;"><span class="topic-label color-green">Total Sites</span><br>The right values are the total number of sites you've shared each type of info with:</span>
+      <span class="subtle-hint" id="emailSpan"><span class="topic-label">Email</span><br>0</span>
+      <span class="subtle-hint" id="phoneSpan"><span class="topic-label">Phone</span><br>0</span>
+      <span class="subtle-hint" id="dobSpan"><span class="topic-label">DoB</span><br>0</span>
+      <span class="subtle-hint" id="addressSpan"><span class="topic-label">Address</span><br>0</span>
+    </div>
+    <div class="notice">
+      <span class="subtle-hint"><span class="topic-label color-purple">View Full Info</span><br>The table below contains all the shared info for each site.</span>
+    </div>
+    <body>
+      <table id="infoTable">
+        <tr>
+          <td>Website</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Date of Birth</td>
+          <td>Address</td>
+        </tr>
+      </table>
+    </body>
+  </div>
   <script type="module" src="options.js"></script>
 </html>

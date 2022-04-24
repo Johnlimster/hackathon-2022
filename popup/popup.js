@@ -16,5 +16,4 @@ updateInfo.addEventListener("click", async () => {
     let address = addressInput.checked;
 
     storeInfo(website, phone, email, dob, address);
-    window.close();
 });
