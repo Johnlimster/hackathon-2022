@@ -10,9 +10,10 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let website = sender.tab.url;
     let email = request.hasEmailField;
+    let phone = request.hasPhoneField;
     let dob = request.hasDobField;
     let address = request.hasAddressField;
-    storeInfo(website, email, dob, address).then(() => {
+    storeInfo(website, phone, email, dob, address).then(() => {
         sendResponse({ farewell: "goodbye" });
     });
     return true;

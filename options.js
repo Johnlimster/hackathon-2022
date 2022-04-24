@@ -5,6 +5,7 @@ let infoTable = document.getElementById("infoTable");
 async function tableAppendData() {
     let websites = await getStorageByKey("websites");
     let emails = await getStorageByKey("emails");
+    let phones = await getStorageByKey("phones");
     let dobs = await getStorageByKey("dobs");
     let addresses = await getStorageByKey("addresses");
 
@@ -12,6 +13,7 @@ async function tableAppendData() {
         let newRow = infoTable.insertRow();
         newRow.insertCell().append(websites[i]);
         newRow.insertCell().append(emails[i]);
+        newRow.insertCell().append(phones[i]);
         newRow.insertCell().append(dobs[i]);
         newRow.insertCell().append(addresses[i]);
     }
